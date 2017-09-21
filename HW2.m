@@ -7,13 +7,17 @@
 
 xx = rand(5); % random 5x5 matrix
 xx(3,2) = NaN; %put a NaN in
-yy = mean(xx); 
+yy = mean(xx);
 zz = meannonan(xx);
-
 %compare the size of yy and zz. Notice that yy produces a row vector (the
 %average of the rows) and has a NaN in the column that contained the NaN whereas 
 %zz is a single number (the average of all non-NaN entries in xx). Explain
 %this behavior. 
+
+%The NaN in the matrix cannot be excluded by the mean function and is 
+%forces to take the mean for each column, giving a row of 4 numbers and one
+%NaN (a 1 by 5 matrix). zz, is able to exclude the NaN, and thus can take 
+%the mean of everything in the matrix (a 1 by 1 matrix). 
 
 % Part 2. Modify the meannonan code so that it behaves as the mean function
 % and produces a row vector where each entry is the average of each column
