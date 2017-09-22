@@ -4,10 +4,14 @@
 % code should determine the lengths of dna sequence to test and implement
 % your decision. 
 
-function prob_plotter=plotProbabilityORF(N_ORF)
-dna_seq_length=N_ORF*100;
-N=1:dna_seq_length;
-y=[];
-for x=1:dna_seq_length
-    probabilityORF(x, N_ORF)
+function prob_plot=plotProbabilityORF(N_ORF)
+x=1:(25*N_ORF);
+y=zeros(size(x));
+for dna_seq_length=1:(25*N_ORF)
+y(dna_seq_length)=probabilityORF(dna_seq_length, N_ORF);
+end
+figure;
+scatter(x, y);
+xlabel('seq length');
+ylabel('prob'); 
 end
