@@ -52,6 +52,21 @@ zz = meannonan(xx);
 % plot with separate curves for ORF lengths 100,200,300,and 400. Make sure
 % your plot has appropriate axis labels and legend. 
 
+plotProbabilityORF(100);
+xlabel ('seq length');
+ylabel ('probability');
+title ('Probaility of ORF sizes');
+hold on;
+plotProbabilityORF(200);
+hold on;
+plotProbabilityORF(300);
+hold on;
+plotProbabilityORF(400);
+hold off;
+
+%The function here will take too long for these numbers, but I've tested with smaller numbers
+%and it doesn't actually work. They each form their own plot and I don't
+%know how to fix it.
 %% Problem 3. Codon translation and optimization
 
 % DNA sequence gets translated into protein through a code known as the
